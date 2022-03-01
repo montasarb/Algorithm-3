@@ -1,0 +1,34 @@
+PROCEDURE dot_product (V1: ARRAY_OF INTEGER[]; V2: ARRAY_OF INTEGER[]; )
+VAR
+    var ps:INTEGER;
+    i, j : INTEGER ;
+BEGIN
+ps= 0 ;
+    FOR i FROM 0 TO V1.length-1 DO
+        ps= ps+V1[i] * V2[i]
+    END_FOR
+END
+
+// ------------------------------------------------------------------------------------
+ALGORITHM algo3()
+VAR
+tab : ARRAY_OF INTEGER[];
+ps: INTEGER =0;
+i,j:INTEGER;
+tab := [[-1,0],[-5,1],[1,5],[8,4]]
+
+BEGIN
+FOR i FROM 0 TO tab.length-2  DO
+    FOR j FROM i+1 TO tab.length DO
+        V1:=tab[i];
+        V2:=tab[j];
+        ps := 0 ;
+        dot_product(V1,V2)
+        IF (ps = 0) THEN
+            write(V1," et ", V2 , " sont orthogonaux")
+        else write(V1," et ", V2 , " ne sont orthogonaux")
+        END_IF
+    END_FOR
+END_FOR
+    
+END

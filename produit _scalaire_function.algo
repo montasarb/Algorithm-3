@@ -1,0 +1,41 @@
+FUNCTION dot_product (V1: ARRAY_OF INTEGER[]; V2: ARRAY_OF INTEGER[]; ):INTEGER
+VAR
+    var ps:INTEGER;
+    i: INTEGER ;
+BEGIN
+ps= 0 ;
+    FOR i FROM 0 TO V1.length-1 DO
+        ps= ps+V1[i] * V2[i]
+    END_FOR
+    RETURN ps ;
+END
+FUNCTION function_name(parameters) : return_type
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+    RETURN value ;
+END
+
+// ------------------------------------------------------------------------------------
+ALGORITHM algo3()
+VAR
+tab : ARRAY_OF INTEGER[];
+i,j:INTEGER;
+resultat: INTEGER =0;
+tab := [[-1,0],[-5,1],[1,5],[8,4]]
+
+BEGIN
+FOR i FROM 0 TO tab.length-2  DO
+    FOR j FROM i+1 TO tab.length DO
+        V1:=tab[i];
+        V2:=tab[j];
+        ps := 0 ;
+        resultat := dot_product(V1,V2)
+        IF (resultat = 0) THEN
+            write(V1," et ", V2 , " sont orthogonaux")
+        else write(V1," et ", V2 , " ne sont orthogonaux")
+        END_IF
+    END_FOR
+END_FOR
+END
